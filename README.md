@@ -1,16 +1,16 @@
-# JocoRobos 2025
-    Reeeeeeeeeefscapeeeee
+# JocoRobos Doyenne 2025
+    100% girl power trust me 
 
 ## Description
 
-Please help me
+Girls rule or something
 
 ## Prerequisites
 
 * WPILIB
 * A Windows computer
-* ~~Time with the robot~~ You would think
+
 
 ## Configuration
 
-idk... idk
+A prayer
