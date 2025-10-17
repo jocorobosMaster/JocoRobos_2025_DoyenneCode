@@ -10,10 +10,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj2.command.RunCommand;
-import frc.robot.util.ElasticMessages;
-import edu.wpi.first.cameraserver.CameraServer;
+
+
 import edu.wpi.first.wpilibj.DriverStation;
-import edu.wpi.first.wpilibj.Servo;
+
 
 
 
@@ -24,7 +24,7 @@ import edu.wpi.first.wpilibj.Servo;
  * project.
  */
 public class Robot extends TimedRobot {
-  private ElasticMessages elasticMessages;
+ 
   private Command m_autonomousCommand;
   private RobotContainer m_robotContainer;
   public Timer timer = new Timer();

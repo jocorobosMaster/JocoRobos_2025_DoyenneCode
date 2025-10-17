@@ -1,41 +1,29 @@
 package frc.robot;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.function.BiConsumer;
-import java.util.function.BooleanSupplier;
-import java.util.function.Consumer;
-import java.util.function.Supplier;
 
 import org.json.simple.parser.ParseException;
 
-import com.pathplanner.lib.trajectory.PathPlannerTrajectory;
+
 import com.pathplanner.lib.util.FileVersionException;
 
 import edu.wpi.first.math.MathUtil;
-import edu.wpi.first.math.controller.PIDController;
-import edu.wpi.first.math.controller.ProfiledPIDController;
+
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.geometry.Translation2d;
-import edu.wpi.first.math.kinematics.ChassisSpeeds;
-import edu.wpi.first.math.trajectory.Trajectory;
-import edu.wpi.first.math.trajectory.TrajectoryConfig;
-import edu.wpi.first.math.trajectory.TrajectoryGenerator;
-import edu.wpi.first.math.trajectory.TrapezoidProfile;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
-import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
+
 import edu.wpi.first.wpilibj2.command.RunCommand;
-import edu.wpi.first.wpilibj2.command.SwerveControllerCommand;
-import frc.robot.Constants.AutoConstants;
-import frc.robot.Constants.DriveConstants;
+
 import frc.robot.Constants.OIConstants;
-import frc.robot.Vision.LimelightHelpers;
+
 import frc.robot.commands.ButtonBindings;
-import frc.robot.commands.LimeLightCommands;
+
 
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.ElevatorSubsystem;
@@ -43,7 +31,7 @@ import frc.robot.subsystems.EndEffectorSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
 import com.pathplanner.lib.path.PathPlannerPath;
 import com.pathplanner.lib.auto.AutoBuilder;
-import com.pathplanner.lib.config.RobotConfig;
+
 
 
 
@@ -60,7 +48,7 @@ public class RobotContainer {
     public XboxController m_XboxDriverController;
     
     public ButtonBindings buttons;
-    public LimeLightCommands LLCom;
+
     private static RobotContainer instance;
 
 
@@ -68,7 +56,7 @@ public class RobotContainer {
 
         instance = this;
         initiateSubsystems();
-        LLCom = new LimeLightCommands(this); // Initialize LimeLightCommands
+     
         buttons = new ButtonBindings(this);
         buttons.configureButtonBindings();
         
@@ -163,7 +151,7 @@ public class RobotContainer {
         m_robotDrive.resetOdometry(startingPose);
     
         // Use AutoBuilder to follow the path
-        Command pathCommand = AutoBuilder.followPath(path);
+        
     
         // Run the command and stop at the end
         return AutoBuilder.followPath(path)
