@@ -7,8 +7,10 @@ import frc.robot.Constants.IntakeConstants;
 public class IntakeSubsystem extends SubsystemBase {
 double FinalRaiseSpeed = 0;
 boolean IntakeUp = false;
+double speed = .5;
 
     WPI_VictorSPX IntakeMotor = new WPI_VictorSPX(IntakeConstants.kIntakeRotationMotorCanId);
+    WPI_VictorSPX IntakeShoot = new WPI_VictorSPX(IntakeConstants.kIntakeShoototorCanId);
     DutyCycleEncoder IntakeEncoder = new DutyCycleEncoder(IntakeConstants.kIntakeEncoderDIOPort);
     
     private double Intakeposition = 0; // Current position relative to the offset
@@ -16,6 +18,18 @@ boolean IntakeUp = false;
     public void RaiseIntake(double Direction) { // Positive int = raise, negative = lower, 0 = stop
         
         IntakeMotor.set(-Direction);
+        // if(GetIntakePosition() >= .65) 
+        // {
+        //     IntakeMotor.set(-Direction);
+        // }
+        // else{
+        //     IntakeMotor.set(0); 
+        // }
+    }
+
+    public void shoot(double Direction) { // Positive int = raise, negative = lower, 0 = stop
+        
+        IntakeMotor.set(-speed);
         // if(GetIntakePosition() >= .65) 
         // {
         //     IntakeMotor.set(-Direction);

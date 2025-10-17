@@ -36,7 +36,7 @@ import frc.robot.Constants.OIConstants;
 import frc.robot.Vision.LimelightHelpers;
 import frc.robot.commands.ButtonBindings;
 import frc.robot.commands.LimeLightCommands;
-import frc.robot.subsystems.ClimberSubsystem;
+
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.ElevatorSubsystem;
 import frc.robot.subsystems.EndEffectorSubsystem;
@@ -51,7 +51,7 @@ import com.pathplanner.lib.config.RobotConfig;
 public class RobotContainer {
     public DriveSubsystem m_robotDrive;
     public ElevatorSubsystem m_robotElevator;
-    public ClimberSubsystem m_robotClimber;
+ 
     public IntakeSubsystem m_robotIntake;
     public EndEffectorSubsystem m_robotEndEffector;
     
@@ -121,7 +121,7 @@ public class RobotContainer {
     
         m_robotDrive = new DriveSubsystem();
         m_robotElevator = new ElevatorSubsystem();
-        m_robotClimber = new ClimberSubsystem();
+      
         m_robotIntake = new IntakeSubsystem();
         m_robotEndEffector = new EndEffectorSubsystem();
 

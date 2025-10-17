@@ -17,11 +17,11 @@ public class EndEffectorSubsystem extends SubsystemBase {
     private SparkMax BallHolderGrabMotor = new SparkMax(EndEffectorConstants.kBallGrabberMotorCanId, MotorType.kBrushless);
     private DutyCycleEncoder BallHolderPivotEncoder = new DutyCycleEncoder(EndEffectorConstants.kBallBolderEncoderDIOPort);
 
-    public Servo LLServo = new Servo(0);
+    
 
     public EndEffectorSubsystem() {
 
-        LLServo.setBoundsMicroseconds(2700, 2100, 1500, 900, 300);
+    
 
     }
 
@@ -35,17 +35,7 @@ public class EndEffectorSubsystem extends SubsystemBase {
         LeftOuttakeMotor.set(-shootingSpeed * 0.25);
     }
 
-    public void SetBallHolderGrabMotor(double speed) {
-        BallHolderGrabMotor.set(speed);
-    }
-
-    public void SetBallHolderPivotMotor(double speed) {
-        BallHolderPivotMotor.set(speed);
-    }
-
-    public void SetLLServo(double value) {
-        LLServo.setAngle(value);
-    }
+   
 
     @Override
     public void periodic() {

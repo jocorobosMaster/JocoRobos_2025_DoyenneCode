@@ -4,14 +4,14 @@ import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.wpilibj.Joystick;
 import frc.robot.RobotContainer;
 import frc.robot.Vision.LimelightHelpers;
-import frc.robot.subsystems.ClimberSubsystem;
+
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.ElevatorSubsystem;
 import frc.robot.subsystems.EndEffectorSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
 
 public class LimeLightCommands {
-    private final ClimberSubsystem m_robotClimber;
+
     private final DriveSubsystem m_robotDrive;
     private final EndEffectorSubsystem m_robotEndEffector;
     private final ElevatorSubsystem m_robotElevator;
@@ -20,7 +20,7 @@ public class LimeLightCommands {
     private final Joystick m_driverController;
 
     public LimeLightCommands(RobotContainer container) {
-        this.m_robotClimber = container.m_robotClimber;
+    
         this.m_robotDrive = container.m_robotDrive;
         this.m_robotEndEffector = container.m_robotEndEffector;
         this.m_robotElevator = container.m_robotElevator;
@@ -59,28 +59,7 @@ public class LimeLightCommands {
         return MathUtil.clamp(-ty * kForwardSpeedFactor * speedMultiplier, -0.4, 0.4);
     }
 
-    public void LLSeek() {
-        if (hasValidTarget()) {
-            if (ta < kTaFarThreshold) {
-                double rotationSpeed = MathUtil.clamp(tx * kRotationSpeedFactor, -0.4, 0.4);
-                m_robotDrive.drive(0.2, 0, rotationSpeed, true);
-            } else if (ta < kTaCloseThreshold) {
-                double strafeSpeed = calculateStrafeSpeed();
-                double forwardSpeed = 0.3;
-                m_robotEndEffector.SetLLServo(0);
-                m_robotDrive.drive(forwardSpeed, strafeSpeed, 0, true);
-            } else {
-                double strafeSpeed = calculateStrafeSpeed();
-                double forwardSpeed = calculateForwardSpeed();
-                m_robotDrive.drive(forwardSpeed, strafeSpeed, 0, true);
-                m_robotEndEffector.SetLLServo(0);
-
-            }
-        } else {
-            m_robotDrive.drive(0, 0, 0, true);
-            m_robotEndEffector.SetLLServo(0);
-        }
-    }
+    
 
     public void updateVisionData() {
         tx = LimelightHelpers.getTX("") ;
