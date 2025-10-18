@@ -70,7 +70,7 @@ public class DriveSubsystem extends SubsystemBase {
 
   /** Creates a new DriveSubsystem. */
   public DriveSubsystem() {
-    // Usage reporting for MAXSwerve template
+    /*// Usage reporting for MAXSwerve template
     HAL.report(tResourceType.kResourceType_RobotDrive, tInstances.kRobotDriveSwerve_MaxSwerve);
      // ✅ FIX: Ensure RobotConfig is properly initialized
         RobotConfig config;// ✅ FIX: Corrected method for loading from GUI;
@@ -98,7 +98,7 @@ public class DriveSubsystem extends SubsystemBase {
             this // ✅ Reference to this subsystem (sets command requirements)
         );
 
-        System.out.println("✅ AutoBuilder successfully configured.");
+        System.out.println("✅ AutoBuilder successfully configured.");*/
   }
 
   @Override
