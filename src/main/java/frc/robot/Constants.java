@@ -119,11 +119,11 @@ public final class Constants {
 
   public static final class EndEffectorConstants {
     public static final int kLeftOutTakeMotorCanId = 14;
-    public static final int kRightOutTakeMotorCanId = 12;
+    public static final int kRightOutTakeMotorCanId = 10;
   }
 
   public static final class IntakeConstants {
-    public static final int kIntakeRotationMotorCanId = 9;
+    public static final int kIntakeRotationMotorCanId = 13;
     public static final int kIntakeEncoderDIOPort = 4;  // Likely Absolute, which only needs one port
     public static final int kIntakeShoototorCanId = 12;
 
