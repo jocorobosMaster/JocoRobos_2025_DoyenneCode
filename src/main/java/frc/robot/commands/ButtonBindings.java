@@ -79,11 +79,11 @@ public class ButtonBindings {
         // ------------------------
         // INTAKE ARM MOVEMENT
         // ------------------------
-        new Trigger(() -> m_ButtonController.getRawButton(9))
+        new Trigger(() -> m_ButtonController.getRawButton(16))
             .whileTrue(new RunCommand(() -> m_robotIntake.RaiseIntake(0.25), m_robotIntake))
             .whileFalse(new InstantCommand(() -> m_robotIntake.RaiseIntake(0.0), m_robotIntake));
 
-        new Trigger(() -> m_ButtonController.getRawButton(10))
+        new Trigger(() -> m_ButtonController.getRawButton(17))
             .whileTrue(new RunCommand(() -> m_robotIntake.RaiseIntake(-0.25), m_robotIntake))
             .whileFalse(new InstantCommand(() -> m_robotIntake.RaiseIntake(0.0), m_robotIntake));
 
